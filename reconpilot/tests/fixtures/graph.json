@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "host:app",
+      "node_type": "host",
+      "value": "app.example.com",
+      "tags": ["production"],
+      "metadata": {},
+      "source_tools": ["httpx"],
+      "timestamps": ["2026-05-14T09:00:00Z"]
+    }
+  ],
+  "edges": [],
+  "clusters": [],
+  "summary": {
+    "generated_at": "2026-05-14T09:00:00Z",
+    "node_count": 1,
+    "edge_count": 0,
+    "cluster_count": 0,
+    "anomaly_count": 0,
+    "top_technologies": [],
+    "largest_clusters": [],
+    "shared_infrastructure": [],
+    "suspicious_naming": [],
+    "likely_staging_systems": [],
+    "likely_internal_systems": [],
+    "redirect_chain_count": 0
+  }
+}

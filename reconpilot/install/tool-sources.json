@@ -1,0 +1,209 @@
+[
+  {
+    "name": "subfinder",
+    "category": "core-discovery",
+    "repo_url": "https://github.com/projectdiscovery/subfinder",
+    "language": "Go",
+    "install_method": "go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest",
+    "output_format": "JSONL or text",
+    "notes": "Passive subdomain enumeration."
+  },
+  {
+    "name": "amass",
+    "category": "core-discovery",
+    "repo_url": "https://github.com/owasp-amass/amass",
+    "language": "Go",
+    "install_method": "go install github.com/owasp-amass/amass/v4/...@master",
+    "output_format": "JSON, text, graph data",
+    "notes": "Use passive enumeration first unless active behavior is explicitly approved."
+  },
+  {
+    "name": "assetfinder",
+    "category": "core-discovery",
+    "repo_url": "https://github.com/tomnomnom/assetfinder",
+    "language": "Go",
+    "install_method": "go install github.com/tomnomnom/assetfinder@latest",
+    "output_format": "text",
+    "notes": "Fast candidate subdomain collection."
+  },
+  {
+    "name": "findomain",
+    "category": "core-discovery",
+    "repo_url": "https://github.com/findomain/findomain",
+    "language": "Rust",
+    "install_method": "manual",
+    "output_format": "text",
+    "notes": "Prefer release binaries or package manager install on Windows."
+  },
+  {
+    "name": "httpx",
+    "category": "live-host-probing",
+    "repo_url": "https://github.com/projectdiscovery/httpx",
+    "language": "Go",
+    "install_method": "go install github.com/projectdiscovery/httpx/cmd/httpx@latest",
+    "output_format": "JSONL",
+    "notes": "Use conservative probes in the recon-only phase."
+  },
+  {
+    "name": "dnsx",
+    "category": "dns-mapping",
+    "repo_url": "https://github.com/projectdiscovery/dnsx",
+    "language": "Go",
+    "install_method": "go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest",
+    "output_format": "JSONL",
+    "notes": "Use conservative rate limits and scoped host lists."
+  },
+  {
+    "name": "gowitness",
+    "category": "visual-mapping",
+    "repo_url": "https://github.com/sensepost/gowitness",
+    "language": "Go",
+    "install_method": "go install github.com/sensepost/gowitness@latest",
+    "output_format": "Screenshots plus JSONL",
+    "notes": "Screenshots still touch target systems and should only be used where explicitly allowed."
+  },
+  {
+    "name": "WhatWeb",
+    "category": "tech-fingerprinting",
+    "repo_url": "https://github.com/urbanadventurer/WhatWeb",
+    "language": "Ruby",
+    "install_method": "manual",
+    "output_format": "JSON",
+    "notes": "Prefer low-aggression execution and conservative thread counts."
+  },
+  {
+    "name": "katana",
+    "category": "crawling",
+    "repo_url": "https://github.com/projectdiscovery/katana",
+    "language": "Go",
+    "install_method": "go install github.com/projectdiscovery/katana/cmd/katana@latest",
+    "output_format": "JSONL",
+    "notes": "Constrain depth and rate."
+  },
+  {
+    "name": "gau",
+    "category": "historical-urls",
+    "repo_url": "https://github.com/lc/gau",
+    "language": "Go",
+    "install_method": "go install github.com/lc/gau/v2/cmd/gau@latest",
+    "output_format": "JSONL or text",
+    "notes": "Historical URLs should be revalidated."
+  },
+  {
+    "name": "waybackurls",
+    "category": "historical-urls",
+    "repo_url": "https://github.com/tomnomnom/waybackurls",
+    "language": "Go",
+    "install_method": "go install github.com/tomnomnom/waybackurls@latest",
+    "output_format": "text",
+    "notes": "Use as a hint source, not a truth source."
+  },
+  {
+    "name": "hakrawler",
+    "category": "crawling",
+    "repo_url": "https://github.com/hakluke/hakrawler",
+    "language": "Go",
+    "install_method": "go install github.com/hakluke/hakrawler@latest",
+    "output_format": "text",
+    "notes": "Stream-friendly crawler."
+  },
+  {
+    "name": "uro",
+    "category": "normalization",
+    "repo_url": "https://github.com/s0md3v/uro",
+    "language": "Python",
+    "install_method": "git clone https://github.com/s0md3v/uro.git",
+    "output_format": "text",
+    "notes": "Can also be installed with pip in a dedicated virtual environment."
+  },
+  {
+    "name": "jq",
+    "category": "normalization",
+    "repo_url": "https://github.com/jqlang/jq",
+    "language": "C",
+    "install_method": "manual",
+    "output_format": "JSON or JSONL",
+    "notes": "Use official binaries, Chocolatey, or Scoop on Windows."
+  },
+  {
+    "name": "gf",
+    "category": "normalization",
+    "repo_url": "https://github.com/tomnomnom/gf",
+    "language": "Go",
+    "install_method": "go install github.com/tomnomnom/gf@latest",
+    "output_format": "text",
+    "notes": "Pattern files should be versioned separately."
+  },
+  {
+    "name": "ffuf",
+    "category": "content-discovery",
+    "repo_url": "https://github.com/ffuf/ffuf",
+    "language": "Go",
+    "install_method": "go install github.com/ffuf/ffuf/v2@latest",
+    "output_format": "JSON, CSV, HTML, text",
+    "notes": "Active and potentially noisy. Keep gated by scope policy."
+  },
+  {
+    "name": "feroxbuster",
+    "category": "content-discovery",
+    "repo_url": "https://github.com/epi052/feroxbuster",
+    "language": "Rust",
+    "install_method": "manual",
+    "output_format": "JSON or text",
+    "notes": "Prefer release binaries or package manager install on Windows."
+  },
+  {
+    "name": "dirsearch",
+    "category": "content-discovery",
+    "repo_url": "https://github.com/maurosoria/dirsearch",
+    "language": "Python",
+    "install_method": "git clone https://github.com/maurosoria/dirsearch.git",
+    "output_format": "JSON, CSV, HTML, text",
+    "notes": "Python-based content discovery tool."
+  },
+  {
+    "name": "LinkFinder",
+    "category": "javascript-recon",
+    "repo_url": "https://github.com/GerbenJavado/LinkFinder",
+    "language": "Python",
+    "install_method": "git clone https://github.com/GerbenJavado/LinkFinder.git",
+    "output_format": "text or HTML",
+    "notes": "Endpoint extraction from JavaScript."
+  },
+  {
+    "name": "SecretFinder",
+    "category": "javascript-recon",
+    "repo_url": "https://github.com/m4ll0k/SecretFinder",
+    "language": "Python",
+    "install_method": "git clone https://github.com/m4ll0k/SecretFinder.git",
+    "output_format": "text or HTML",
+    "notes": "Treat results as sensitive."
+  },
+  {
+    "name": "JSParser",
+    "category": "javascript-recon",
+    "repo_url": "https://github.com/nahamsec/JSParser",
+    "language": "Python",
+    "install_method": "git clone https://github.com/nahamsec/JSParser.git",
+    "output_format": "text",
+    "notes": "Useful for route and domain extraction from JavaScript."
+  },
+  {
+    "name": "naabu",
+    "category": "port-discovery",
+    "repo_url": "https://github.com/projectdiscovery/naabu",
+    "language": "Go",
+    "install_method": "go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest",
+    "output_format": "JSONL or text",
+    "notes": "Only when the scope explicitly authorizes port scanning."
+  },
+  {
+    "name": "nmap",
+    "category": "port-discovery",
+    "repo_url": "https://github.com/nmap/nmap",
+    "language": "C++",
+    "install_method": "manual",
+    "output_format": "text, XML, grepable output",
+    "notes": "Use carefully and only with explicit approval."
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "summary": {
+    "total_assets": 1,
+    "total_observations": 1,
+    "high_priority_count": 0,
+    "medium_priority_count": 1,
+    "top_roles": ["documentation (1)"],
+    "top_environments": ["production (1)"],
+    "top_review_targets": ["app.example.com [medium:40]"]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "asset": "app.example.com",
+      "risk_level": "medium",
+      "score": 40,
+      "confidence": 0.7,
+      "semantic_roles": ["documentation"],
+      "environments": ["production"],
+      "reasons": ["API documentation candidate"],
+      "evidence_refs": ["fixture-evidence-1"],
+      "recommended_next_steps": ["Review documentation exposure carefully."]
+    }
+  ]
+}

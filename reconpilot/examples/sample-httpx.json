@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-05-14T08:00:00Z",
+    "input": "app.example.com",
+    "host": "app.example.com",
+    "url": "https://app.example.com",
+    "status_code": 200,
+    "title": "Example Application",
+    "webserver": "nginx",
+    "tech": [
+      "Next.js",
+      "nginx"
+    ],
+    "content_length": 18452
+  },
+  {
+    "timestamp": "2026-05-14T08:00:01Z",
+    "input": "api.example.com",
+    "host": "api.example.com",
+    "url": "https://api.example.com",
+    "status_code": 401,
+    "title": "Unauthorized",
+    "webserver": "envoy",
+    "tech": [
+      "Envoy",
+      "Go"
+    ],
+    "content_length": 612
+  }
+]

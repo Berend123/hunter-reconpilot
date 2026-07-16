@@ -1,0 +1,15 @@
+/target/
+/.idea/
+/.vscode/
+/tools/bin/
+/tools/src/
+/output/*
+!/output/.gitkeep
+/data/*
+!/data/.gitkeep
+/config/reconpilot.json
+/config/reconpilot.gui.json
+*.log
+gui/node_modules/
+gui/dist/
+gui/src-tauri/target/

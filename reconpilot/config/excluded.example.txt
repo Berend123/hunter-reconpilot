@@ -1,0 +1,5 @@
+# Fake sample exclusions for local testing and documentation only.
+# Exclusions should be more specific than the allowed scope and should never broaden it.
+admin.example.com
+internal.example.com
+https://example.com/internal

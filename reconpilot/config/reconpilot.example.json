@@ -1,0 +1,157 @@
+{
+  "profile_name": "passive",
+  "passive_only": true,
+  "allow_port_scans": false,
+  "max_concurrency": 8,
+  "request_delay_ms": 250,
+  "output_root": "output",
+  "user_agent": "ReconPilot/0.1.0",
+  "max_context_chars": 12000,
+  "safety_mode": "strict-local",
+  "enabled_tool_groups": [
+    "core-discovery",
+    "live-host-probing",
+    "crawling",
+    "historical-urls",
+    "javascript-recon",
+    "normalization"
+  ],
+  "score_keywords": [
+    "admin",
+    "login",
+    "debug",
+    "internal",
+    "staging",
+    "token",
+    "upload"
+  ],
+  "profile_defaults": {
+    "passive": {
+      "description": "External tool phases stay dry-run; local graph, API, enrichment, review, LLM pack, and validation phases still run.",
+      "enabled_tools": [
+        "subfinder",
+        "httpx",
+        "katana",
+        "gau"
+      ],
+      "rate_limits": {
+        "http_requests_per_second": "placeholder",
+        "dns_queries_per_second": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "plans": "output/plans",
+        "maps": "output/maps",
+        "api_intel": "output/api-intel",
+        "enrichment": "output/enrichment",
+        "review": "output/review",
+        "llm_pack": "output/llm-pack"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    },
+    "active-lite": {
+      "description": "Phase ordering for scope-validated external recon plus local analysis. External execution still requires --execute.",
+      "enabled_tools": [
+        "subfinder",
+        "httpx",
+        "katana",
+        "gau",
+        "dnsx",
+        "gowitness",
+        "WhatWeb"
+      ],
+      "rate_limits": {
+        "http_requests_per_second": "placeholder",
+        "dns_queries_per_second": "placeholder",
+        "screenshot_concurrency": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "raw": "output/raw",
+        "dns": "output/dns",
+        "screenshots": "output/screenshots",
+        "tech": "output/tech",
+        "maps": "output/maps",
+        "api_intel": "output/api-intel",
+        "enrichment": "output/enrichment",
+        "review": "output/review",
+        "llm_pack": "output/llm-pack"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    },
+    "api-focused": {
+      "description": "Local API and JavaScript analysis pipeline for existing graph-aware outputs.",
+      "enabled_tools": [
+        "katana",
+        "gau"
+      ],
+      "rate_limits": {
+        "local_artifact_processing": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "maps": "output/maps",
+        "api_intel": "output/api-intel",
+        "enrichment": "output/enrichment",
+        "review": "output/review",
+        "llm_pack": "output/llm-pack"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    },
+    "mapping-focused": {
+      "description": "DNS, screenshot, and technology mapping followed by local graph, enrichment, review, and validation.",
+      "enabled_tools": [
+        "dnsx",
+        "gowitness",
+        "WhatWeb"
+      ],
+      "rate_limits": {
+        "dns_queries_per_second": "placeholder",
+        "screenshot_concurrency": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "dns": "output/dns",
+        "screenshots": "output/screenshots",
+        "tech": "output/tech",
+        "maps": "output/maps",
+        "enrichment": "output/enrichment",
+        "review": "output/review"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    },
+    "review-only": {
+      "description": "Existing graph outputs are enriched and turned into a review workspace without launching tools.",
+      "enabled_tools": [],
+      "rate_limits": {
+        "local_artifact_processing": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "maps": "output/maps",
+        "enrichment": "output/enrichment",
+        "review": "output/review"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    },
+    "llm-pack-only": {
+      "description": "Existing review and enrichment outputs are packaged into deterministic local reasoning bundles.",
+      "enabled_tools": [],
+      "rate_limits": {
+        "local_artifact_processing": "placeholder"
+      },
+      "output_paths": {
+        "root": "output",
+        "review": "output/review",
+        "llm_pack": "output/llm-pack"
+      },
+      "max_context_chars": 12000,
+      "safety_mode": "strict-local"
+    }
+  }
+}

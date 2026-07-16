@@ -1,0 +1,96 @@
+{
+  "normalized_findings": [
+    {
+      "id": "finding-001",
+      "asset": "https://app.example.com",
+      "kind": "url",
+      "title": "Admin login path discovered",
+      "normalized_url": "https://app.example.com/admin/login",
+      "source_tools": [
+        "katana",
+        "LinkFinder"
+      ],
+      "tags": [
+        "admin",
+        "auth"
+      ]
+    },
+    {
+      "id": "finding-002",
+      "asset": "https://api.example.com",
+      "kind": "parameter",
+      "title": "Suspicious redirect parameter",
+      "normalized_url": "https://api.example.com/v1/redirect",
+      "parameters": [
+        "returnUrl",
+        "target"
+      ],
+      "source_tools": [
+        "gau",
+        "gf"
+      ],
+      "tags": [
+        "redirect",
+        "api"
+      ]
+    }
+  ],
+  "scored_findings": [
+    {
+      "id": "finding-001",
+      "asset": "https://app.example.com",
+      "kind": "url",
+      "title": "Admin login path discovered",
+      "normalized_url": "https://app.example.com/admin/login",
+      "source_tools": [
+        "katana",
+        "LinkFinder"
+      ],
+      "tags": [
+        "admin",
+        "auth"
+      ],
+      "notes": [
+        "Validate reachable states and capture surrounding route context."
+      ],
+      "score": {
+        "total": 82,
+        "reasons": [
+          "Admin keyword in path",
+          "Login workflow exposure",
+          "Seen in multiple sources"
+        ]
+      }
+    },
+    {
+      "id": "finding-002",
+      "asset": "https://api.example.com",
+      "kind": "parameter",
+      "title": "Suspicious redirect parameter",
+      "normalized_url": "https://api.example.com/v1/redirect",
+      "parameters": [
+        "returnUrl",
+        "target"
+      ],
+      "source_tools": [
+        "gau",
+        "gf"
+      ],
+      "tags": [
+        "redirect",
+        "api"
+      ],
+      "notes": [
+        "Review linked routes and response metadata without fuzzing."
+      ],
+      "score": {
+        "total": 68,
+        "reasons": [
+          "Redirect-style parameter names",
+          "API endpoint pattern",
+          "Historical and normalized overlap"
+        ]
+      }
+    }
+  ]
+}

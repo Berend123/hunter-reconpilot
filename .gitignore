@@ -1,0 +1,35 @@
+# Local workspace and editor state
+.gradle/
+.obsidian/
+.idea/
+.vscode/
+**/.tmp-*/
+**/.tmp-*
+*.log
+*.exe
+
+# Build and dependency outputs
+**/build/
+**/target/
+**/node_modules/
+**/dist/
+**/tools/
+**/gui/src-tauri/gen/
+
+# Runtime artifacts and target data
+**/output/*
+!**/output/.gitkeep
+**/data/*
+!**/data/.gitkeep
+reconpilot/config/scope.txt
+reconpilot/config/excluded.txt
+reconpilot/config/reconpilot.json
+reconpilot/config/reconpilot.gui.json
+
+# Hunter's Java implementation is not part of this public prototype snapshot.
+/build.gradle
+/settings.gradle
+/gradle/
+/gradlew
+/gradlew.bat
+/hunter-*/

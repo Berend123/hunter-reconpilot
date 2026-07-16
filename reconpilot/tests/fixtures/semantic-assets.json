@@ -1,0 +1,24 @@
+[
+  {
+    "asset": "app.example.com",
+    "semantic_tags": [
+      {
+        "tag": "api_documentation",
+        "category": "endpoint_intent",
+        "confidence": 0.95,
+        "evidence": ["Matched '/swagger'"]
+      }
+    ],
+    "roles": ["documentation"],
+    "environments": ["production"],
+    "risk_explanations": [],
+    "related_nodes": ["host:app"],
+    "api_endpoints": [],
+    "api_objects": [],
+    "auth_observations": [],
+    "js_observations": [],
+    "schema_observations": [],
+    "graphql_observations": [],
+    "neighborhood_summary": "Local fixture summary."
+  }
+]

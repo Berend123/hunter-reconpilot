@@ -1,0 +1,20 @@
+[
+  {
+    "endpoint_id": "endpoint:get:/swagger",
+    "method": "GET",
+    "path": "https://app.example.com/swagger",
+    "normalized_path": "/swagger",
+    "parameters": [],
+    "auth_indicators": ["bearer_token"],
+    "inferred_objects": ["User"],
+    "semantic_tags": [
+      {
+        "tag": "api_documentation",
+        "category": "endpoint_intent",
+        "confidence": 0.95,
+        "evidence": ["Matched '/swagger'"]
+      }
+    ],
+    "source": "fixture"
+  }
+]

@@ -1,0 +1,4 @@
+# Fake sample scope for local testing and documentation only.
+# Do not scan any real target without explicit written authorization.
+# Keep dry-run mode as the default unless you intentionally approve execution.
+example.com
