@@ -2,6 +2,33 @@
 
 Hunter and ReconPilot are independent security-research tooling prototypes by Hendrik Fuchs. The work explores how an operator can collect, structure, correlate, and review authorized security observations without turning the workflow into an uncontrolled scanner.
 
+## At A Glance
+
+| Question | Answer |
+| --- | --- |
+| What problem does it solve? | Security research produces fragmented observations. This project turns them into bounded, structured evidence an analyst can review and validate. |
+| Who is it for? | Software engineers and security researchers working on systems they own or are explicitly authorized to assess. |
+| What is the philosophy? | Reduce noise, preserve evidence, keep execution explicit, and leave conclusions with the analyst. |
+| How are humans kept in control? | Scope is declared first, target contact is opt-in, AI execution is separately controlled, and generated conclusions require validation. |
+| What is public today? | The active ReconPilot implementation and the design documentation for the companion Hunter workflow. |
+
+## Architecture
+
+```text
+Authorized scope and exclusions
+    |
+    +-- Hunter workflow design
+    |     Burp observations -> mapping -> prioritization -> diffs/flows -> casefile
+    |
+    +-- ReconPilot implementation
+          collection plan -> normalization -> enrichment -> graph/API/JS correlation
+              -> review queue -> optional bounded AI reasoning -> validation/report/audit
+    |
+    +-- Analyst review and responsible reporting
+```
+
+Hunter and ReconPilot are complementary rather than dependent. Hunter explores the manual Burp-side investigation workflow. ReconPilot is a standalone implementation for recon orchestration, structured analysis, and review artifacts.
+
 The repository is deliberately operator-led:
 
 - scope and exclusions are explicit
@@ -52,6 +79,8 @@ Use this repository only on systems you own or where you have explicit authoriza
 
 ReconPilot keeps external-tool execution behind an explicit `--execute` control. Optional Codex execution uses a separate `--execute-codex` control; enabling one does not enable the other. Generated reasoning still requires manual validation.
 
+The control model also includes dry-run planning, explicit scope and exclusion files, redaction support, machine-readable manifests, and append-only audit events. These controls make activity and evidence reviewable; they do not replace authorization or analyst judgment.
+
 Read [Safety and Scope](reconpilot/SAFETY_AND_SCOPE.md) before using the project against any target.
 
 ## Quick Start
@@ -77,4 +106,3 @@ The passive test prepares local artifacts without touching a target. Review the 
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
